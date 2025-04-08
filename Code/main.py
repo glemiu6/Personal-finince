@@ -11,8 +11,8 @@ class CSV:
     @classmethod #trebuie sa mai revad asta ce face
     def initiere_csv(cls):
         """
-        initializam csv_file pentru a fi pregatit
-        citim fisierul daca exista sau creem fisierul daca nu exista
+        initialize csv_file to be ready
+        read the file if it exists or create the file if it doesn't exist
 
         """
         try:
@@ -25,7 +25,7 @@ class CSV:
     @classmethod
     def add_entry(cls,Data,Amount,Category,Descriptions):
         """
-        adaugam datele necesare in csv_file
+        add the necessary data to the csv_file
         :param Data:
         :param Amount:
         :param Category:
@@ -47,10 +47,10 @@ class CSV:
     @classmethod
     def get_transactions(cls,start_date,end_date):
         df=pd.read_csv(cls.CSV_FILE)
-        df['Date']=pd.to_datetime(df['Date'],format=CSV.FORMAT)#facem din formatul string in formatul date time object
+        df['Date']=pd.to_datetime(df['Date'],format=CSV.FORMAT)#we make the string format into the date time object format
         start_date=datetime.strptime(start_date,CSV.FORMAT)
         end_date=datetime.strptime(end_date,CSV.FORMAT)
-        #Creem o masca pentru a vedea daca trebuie sa luam sau nu in considerare
+        #We create a mask to see whether or not we need to take it into account
         mask=(df['Date']>=start_date) & (df['Date']<=end_date)
         filtered_df=df.loc[mask]
 
@@ -71,8 +71,8 @@ class CSV:
 
 def add():
     """
-    Acesta functioe initializeaza csv
-    Apoi ia datele necesare de la utilizator si le stocheaza in file
+    This function initializes the csv
+    Then it takes the necessary data from the user and stores it in files
 
     """
     CSV.initiere_csv()

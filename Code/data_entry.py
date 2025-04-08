@@ -5,15 +5,15 @@ CATEGORIES={"I": "Income",
             "E": "Expense"}
 def get_data(prompt, allow_default=False):
     """
-    Primi data de la utilizator ,
-    Daca vrem data de azi apasam enter
-    De asta folosim allow_default = False
+    Get date from user ,
+    If we want today's date we press enter
+    That's why we use allow_default = False
 
     """
     date_string=input(prompt)
     if allow_default and not date_string:
         return datetime.today().strftime(date_format)
-    try:#validam data ca sa fie d-m-y
+    try:#we validate the date to be d-m-y
         Valid_date=datetime.strptime(date_string, date_format)
         return Valid_date.strftime(date_format)
     except ValueError:
@@ -22,8 +22,8 @@ def get_data(prompt, allow_default=False):
 
 def get_amout():
     """
-    Cerem utilizatorului sa dea detalii despre suma de bani
-    Cerinte sunt ca sa fie positiv
+    We ask the user to provide details about the amount of money
+    Requirements are to be positive
     :return: amount
     """
     try:
@@ -37,9 +37,8 @@ def get_amout():
 
 def get_category():
     """
-    Cerem categoria I sau E
-    Folosim un dictionary pentru a accesa datele cand selectam I sau E
-
+    We are asking for category I or E
+    We use a dictionary to access the data when we select I or E
     :return: I -> Income
             E-> Expense
     """
