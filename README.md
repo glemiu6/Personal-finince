@@ -6,7 +6,7 @@
 ## Summary
  
  - [Environment](#setting-up-the-environment)
- - [About the code](#)
+ - [About the code](#about-the-code)
  
 ---
 ##  Setting up the Environment:
@@ -36,3 +36,21 @@ pip install -r requirements.txt
 ```bash
 cd Code
 ```
+### 5. Running the program
+```bash
+python main.py
+```
+or
+```bash
+python3 main.py
+```
+### 6. Closing the environment:
+```bash
+deactivate
+```
+
+---
+
+## About the code
+
+We created a python file named 
